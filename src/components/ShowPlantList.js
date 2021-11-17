@@ -13,8 +13,9 @@ class ShowPlantList extends Component {
   }
 
   componentDidMount() {
+    const BASE_URL = "https://plantboutique.herokuapp.com/";   
     axios
-      .get('http://localhost:8082/api/plants')
+      .get(`${BASE_URL}`)
       .then(res => {
           this.setState({         
           plants: res.data

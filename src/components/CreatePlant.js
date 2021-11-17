@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 
-
 class CreatePlant extends Component {
   constructor() {
     super();
@@ -22,7 +21,7 @@ class CreatePlant extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-
+    
     const data = {
       name: this.state.name,
       scientificName: this.state.scientificName,
@@ -30,9 +29,9 @@ class CreatePlant extends Component {
       description: this.state.description,
       price: this.state.price
     };
-
+    const BASE_URL = "https://plantboutique.herokuapp.com/";
     axios
-      .post('http://localhost:8082/api/plants', data)
+      .post(`${BASE_URL}/api/plants`, data)
       .then(res => {
         this.setState({
           name: '',

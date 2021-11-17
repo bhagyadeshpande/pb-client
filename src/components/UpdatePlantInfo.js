@@ -55,9 +55,9 @@ class UpdatePlantInfo extends Component {
       description: this.state.description,
       price: this.state.price
     };
-    
+    const BASE_URL = "https://plantboutique.herokuapp.com/";   
     axios
-      .put(`http://localhost:8082/api/plants/${data.id}`, data)
+      .put(`${BASE_URL}/${data.id}`, data)
       .then(res => {      
            alert("Plant details have been updated successfully!");       
            window.location.href=`/show-plant/${data.id}`
