@@ -33,7 +33,7 @@ class showPlantDetails extends Component {
 
   onDeleteClick (id) {
       axios
-      .delete('http://localhost:8082/api/plants/'+id)
+      .delete("https://plantboutique.herokuapp.com/api/plants/"+id)
       .then(res => {
         alert("Selected plant is deleted from the list!");
         window.location.href = "/";
