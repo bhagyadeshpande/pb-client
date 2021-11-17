@@ -12,10 +12,9 @@ class ShowPlantList extends Component {
     };
   }
 
-  componentDidMount() {
-    const BASE_URL = "https://plantboutique.herokuapp.com/";   
+  componentDidMount() {    
     axios
-      .get(`${BASE_URL}`)
+      .get("https://plantboutique.herokuapp.com/api/plants")
       .then(res => {
           this.setState({         
           plants: res.data
