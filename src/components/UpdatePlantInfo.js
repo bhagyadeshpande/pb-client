@@ -23,7 +23,7 @@ class UpdatePlantInfo extends Component {
     const len = (lastItem.length)-1;
     const plantId = lastItem[len];   
     axios
-    .get(`http://localhost:8082/api/plants/${plantId}`)
+    .get(`https://plantboutique.herokuapp.com/api/plants/${plantId}`)
     .then(res => {   
         this.setState({
         id:res.data._id,
@@ -55,9 +55,9 @@ class UpdatePlantInfo extends Component {
       description: this.state.description,
       price: this.state.price
     };
-    const BASE_URL = "https://plantboutique.herokuapp.com/";   
+    
     axios
-      .put(`${BASE_URL}/${data.id}`, data)
+      .put(`https://plantboutique.herokuapp.com/${data.id}`, data)
       .then(res => {      
            alert("Plant details have been updated successfully!");       
            window.location.href=`/show-plant/${data.id}`

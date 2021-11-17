@@ -16,10 +16,10 @@ class showPlantDetails extends Component {
       const lastItem = path.split("/");
       const len = (lastItem.length)-1;
       const plantId = lastItem[len];     
-      const BASE_URL = "https://plantboutique.herokuapp.com/";   
+      
       //const BASE_URL -= "http://localhost:8082";
     axios
-      .get(`${BASE_URL}/api/plants/${plantId}`)
+      .get(`https://plantboutique.herokuapp.com/api/plants/${plantId}`)
       .then(res => {        
          this.setState({          
           plant: res.data          

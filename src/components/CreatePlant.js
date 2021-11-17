@@ -29,9 +29,9 @@ class CreatePlant extends Component {
       description: this.state.description,
       price: this.state.price
     };
-    const BASE_URL = "https://plantboutique.herokuapp.com/";
+    
     axios
-      .post(`${BASE_URL}/api/plants`, data)
+      .post("https://plantboutique.herokuapp.com/api/plants", data)
       .then(res => {
         this.setState({
           name: '',
