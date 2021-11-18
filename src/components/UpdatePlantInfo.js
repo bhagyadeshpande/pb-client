@@ -58,10 +58,9 @@ class UpdatePlantInfo extends Component {
     
     axios
       .put(`https://plantboutique.herokuapp.com/api/plants/${data.id}`, data)
-      .then(res => {      
-        console.log("response updates", res.data.id);
+      .then(res => {              
            alert("Plant details have been updated successfully!");     
-           window.location.href = `/show-plant/${res.data._id}` 
+           window.location.href = "/";
           })
       .catch(err => {
         console.log("Error in UpdatePlantInfo!");
