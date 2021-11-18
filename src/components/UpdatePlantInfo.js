@@ -60,7 +60,7 @@ class UpdatePlantInfo extends Component {
       .put(`https://plantboutique.herokuapp.com/api/plants/${data.id}`, data)
       .then(res => {      
            alert("Plant details have been updated successfully!");       
-           window.location.href=`api/plants/show-plant/${data.id}`
+           <Link to={`/show-plant/${data.id}`}> </Link>   
       })
       .catch(err => {
         console.log("Error in UpdatePlantInfo!");
